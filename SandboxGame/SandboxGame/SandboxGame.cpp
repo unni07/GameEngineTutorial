@@ -1,5 +1,5 @@
-#include <QtWidgets\qapplication.h>
-#include <QtWidgets\qwidget.h>
+#include <QtGui\qapplication.h>
+#include <QtGui\qwidget.h>
 #include "MyGlWindow.h"
 
 int main(int argc, char* argv[])

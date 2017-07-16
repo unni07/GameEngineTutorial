@@ -1,12 +1,16 @@
 #pragma once
 
-#include <QtOpenGL\QGLWidget.h>
+#include <QtOpenGL\QGLWidget>
 
 class MyGlWindow : public QGLWidget
 {
 public:
-	MyGlWindow()	: QGLWidget() {}
-	//MyGlWindow();
-	//~MyGlWindow();
+	
+	MyGlWindow();
+	~MyGlWindow();
+	GLuint vertexBufferID;
+protected:
+	void initializeGL();
+	void paintGL();
 };
 
