@@ -24,6 +24,9 @@
     <ClCompile Include="MyGlWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyglWindow_MOC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyGlWindow.h">

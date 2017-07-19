@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyGlWindow.cpp" />
+    <ClCompile Include="MyglWindow_MOC.cpp" />
     <ClCompile Include="SandboxGame.cpp" />
   </ItemGroup>
   <ItemGroup>
