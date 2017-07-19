@@ -53,3 +53,8 @@ SandboxGame/SandboxGame/x64/Debug/SandboxGame.tlog/unsuccessfulbuild
 SandboxGame/SandboxGame/x64/Debug/vc141.idb
 SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/SANDBOXGAME-869d6db9/MYGLWINDOW-2d049318/MYGLWINDOW.ipch
 SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/SANDBOXGAME-869d6db9/MYGLWINDOW_MOC-ac027796/MYGLWINDOW_MOC.ipch
+SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/ENGINE-47ca63a0/VECTOR2D-c55344ea/VECTOR2D.ipch
+SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/ENGINETESTER-1ee40861/GTEST-ALL-6381c33d/GTEST-ALL.ipch
+SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/ENGINETESTER-1ee40861/SOURCE-9a14807c/SOURCE.ipch
+SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/ENGINETESTER-1ee40861/VECTOR2D-21cc1fcf/VECTOR2D.ipch
+SandboxGame/.vs/SandboxGame/v15/ipch/AutoPCH/ENGINETESTER-1ee40861/VECTOR2DTEST-386ab474/VECTOR2DTEST.ipch
