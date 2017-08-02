@@ -18,9 +18,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Math\vector2D.inl" />
+    <ClInclude Include="Math\vector2D.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Math\vector2D.h" />
+    <ClCompile Include="Math\vector2D.inl" />
   </ItemGroup>
 </Project>
