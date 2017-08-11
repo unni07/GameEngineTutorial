@@ -19,8 +19,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\vector2D.h" />
+    <ClInclude Include="Time\Clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Math\vector2D.inl" />
+    <ClCompile Include="Time\Clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

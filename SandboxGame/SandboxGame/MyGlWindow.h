@@ -13,6 +13,8 @@ public:
 	
 	MyGlWindow();
 	~MyGlWindow();
+	bool shutdown();
+	bool initialize();
 	
 protected:
 	void initializeGL();

@@ -3,8 +3,10 @@
 #include "MyGlWindow.h"
 #include <iostream>
 #include <math\vector2D.h>
-using Math::vector2D;
+#include <Time\Clock.h>
 
+using Math::vector2D;
+using Timing::Clock;
 MyGlWindow::MyGlWindow()
 {
 }
@@ -13,6 +15,7 @@ MyGlWindow::MyGlWindow()
 MyGlWindow::~MyGlWindow()
 {
 }
+
 namespace {
 
 	vector2D verts[] =
@@ -22,24 +25,31 @@ namespace {
 		vector2D(+0.1f, -0.1f)
 	};
 	static const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
-	vector2D shipPosition(0.5f, 0.5f);
+	vector2D shipPosition(-0.0f, -0.0f);
 	vector2D translatedVerts[NUM_VERTS];
-	vector2D velocity(0.001f, 0.001f);
+	vector2D velocity(0.0f, 0.0f);
+	Clock clock;
+}
+
+bool MyGlWindow::shutdown()
+{
+	return clock.shutdown();
+}
+bool MyGlWindow::initialize()
+{
+	return clock.initialize();
+	initializeGL();
+	return true;
 }
 
 void MyGlWindow::initializeGL()
 {
 	GLenum errorCode = glewInit();
 	assert(errorCode == 0);
-
-
+	
 	glGenBuffers(1, &vertexBufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-
-	
-
 	glBufferData(GL_ARRAY_BUFFER, sizeof(verts), NULL, GL_DYNAMIC_DRAW);
-
 	connect(&myTimer, SIGNAL(timeout()), this, SLOT(myUpdate()));
 	myTimer.start(0);
 
@@ -63,7 +73,8 @@ void MyGlWindow::paintGL()
 
 void MyGlWindow::myUpdate()
 {
-	shipPosition = shipPosition + velocity;
+	clock.newFrame();
+	shipPosition = shipPosition + velocity * clock.timeElapsedLastFrame();
 	repaint();
 }
 

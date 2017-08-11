@@ -94,9 +94,12 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;glew32d.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\Middleware\Qt\lib;$(SolutionDir)..\Middleware\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32d.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Middleware\Qt\lib;$(SolutionDir)..\Middleware\glew\lib;$(SolutionDir)..\Engine\Engine\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PreBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\Engine\Engine\$(Configuration)\Engine.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
