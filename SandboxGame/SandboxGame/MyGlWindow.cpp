@@ -1,9 +1,10 @@
 #include <glew.h>
-#include <cassert>
 #include "MyGlWindow.h"
-#include <iostream>
 #include <math\vector2D.h>
 #include <Time\Clock.h>
+#include <QtGui\QKeyEvent>
+#include <cassert>
+#include <iostream>
 
 using Math::vector2D;
 using Timing::Clock;
@@ -27,8 +28,9 @@ namespace {
 	static const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
 	vector2D shipPosition(-0.0f, -0.0f);
 	vector2D translatedVerts[NUM_VERTS];
-	vector2D velocity(0.0f, 0.0f);
+	vector2D shipVelocity(0.0f, 0.0f);
 	Clock clock;
+	
 }
 
 bool MyGlWindow::shutdown()
@@ -58,11 +60,11 @@ void MyGlWindow::initializeGL()
 void MyGlWindow::paintGL()
 {
 
+	glViewport(0, 0, width(), height());
 	glClear(GL_COLOR_BUFFER_BIT);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	
-
 	for (unsigned int i = 0; i < NUM_VERTS; i++)
 	{
 		translatedVerts[i] = verts[i] + shipPosition;
@@ -71,10 +73,29 @@ void MyGlWindow::paintGL()
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
+void MyGlWindow::keyPressEvent(QKeyEvent * e)
+{
+
+}
+
+void MyGlWindow::updateVelocity()
+{
+	const float ACCELERATION = 0.3f *clock.timeElapsedLastFrame();
+	if (GetAsyncKeyState(VK_UP) )
+		shipVelocity.y += ACCELERATION;
+	if (GetAsyncKeyState(VK_DOWN))
+		shipVelocity.y -= ACCELERATION;
+	if (GetAsyncKeyState(VK_LEFT))
+		shipVelocity.x -= ACCELERATION;
+	if (GetAsyncKeyState(VK_RIGHT))
+		shipVelocity.x += ACCELERATION;
+}
+
 void MyGlWindow::myUpdate()
 {
 	clock.newFrame();
-	shipPosition = shipPosition + velocity * clock.timeElapsedLastFrame();
+	updateVelocity();
+	shipPosition += shipVelocity * clock.timeElapsedLastFrame();
 	repaint();
 }
 

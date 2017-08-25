@@ -3,6 +3,8 @@
 #include <QtOpenGL\QGLWidget>
 #include <Qt\qtimer.h>
 
+class QKeyEvent;
+
 class MyGlWindow : public QGLWidget
 {
 	Q_OBJECT
@@ -16,10 +18,13 @@ public:
 	bool shutdown();
 	bool initialize();
 	
+	
 protected:
 	void initializeGL();
 	void paintGL();
+	void keyPressEvent(QKeyEvent * e);
 private slots:
 	void myUpdate();
+	void updateVelocity();
 };
 
