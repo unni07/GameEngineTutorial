@@ -148,11 +148,19 @@
   <ItemGroup>
     <ClCompile Include="..\..\Middleware\googletest-master\include\src\gtest-all.cc" />
     <ClCompile Include="ClockTests.cpp" />
+    <ClCompile Include="Matrix2DTest.cpp" />
+    <ClCompile Include="Matrix3DTest.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="vector2DTest.cpp" />
+    <ClCompile Include="vector3DTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vector2DTest.h" />
+    <ProjectReference Include="..\..\Engine\Engine\Engine.vcxproj">
+      <Project>{2b876b99-18b4-42f7-84b9-0716a6c9de59}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HelperFunction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

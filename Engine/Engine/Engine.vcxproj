@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IntDir>$(Configuration)\temp\</IntDir>
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -144,12 +145,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Math\Constants.h" />
+    <ClInclude Include="Math\matrix2D.h" />
+    <ClInclude Include="Math\matrix3D.h" />
     <ClInclude Include="Time\Clock.h" />
     <ClInclude Include="Math\vector2D.h" />
+    <ClInclude Include="Math\vector3D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Math\matrix2D.cpp" />
+    <ClCompile Include="Math\Source.cpp" />
+    <ClCompile Include="Math\vector2D.cpp" />
+    <ClCompile Include="Math\matrix3D.cpp" />
     <ClCompile Include="Time\Clock.cpp" />
-    <ClCompile Include="Math\vector2D.inl" />
+    <ClCompile Include="Math\vector3D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

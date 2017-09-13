@@ -1,17 +1,16 @@
-#include "vector2DTest.h"
 #include <gtest\gtest.h>
 #include <Math\vector2D.h>
 
 using Math::vector2D;
 
-vector2DTest::vector2DTest()
-{
-}
-
-
-vector2DTest::~vector2DTest()
-{
-}
+//vector2DTest::vector2DTest()
+//{
+//}
+//
+//
+//vector2DTest::~vector2DTest()
+//{
+//}
 
 TEST(vector2D, CONSTRUCTOR)
 {
@@ -19,6 +18,8 @@ TEST(vector2D, CONSTRUCTOR)
 	EXPECT_EQ(1, first.x);
 	EXPECT_EQ(2, first.y);
 }
+
+
 
 TEST(vector2D, VectorAddition)
 {
