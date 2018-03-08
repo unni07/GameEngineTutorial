@@ -1,6 +1,7 @@
 #include <QtGui\qapplication.h>
 #include <QtGui\qwidget.h>
 #include "MyGlWindow.h"
+#include "MyGame.h"
 #include <Windows.h>
 
 int main(int argc, char* argv[])
@@ -18,11 +19,18 @@ int main(int argc, char* argv[])
 
 
 	QApplication application(argc, argv);
-	MyGlWindow myGlWindow;
+
+	MyGame myGame;
+	if (!myGame.initialize())
+		return -1;
+
+	myGame.go();
+	/*MyGlWindow myGlWindow;
 	myGlWindow.initialize();
-	myGlWindow.show();
+	myGlWindow.show();*/
 	int errorCode = application.exec();
-	if (!myGlWindow.shutdown())
+	if (!myGame.shutdown())
 		errorCode |= 1;
+	getchar();
 	return errorCode;
 }

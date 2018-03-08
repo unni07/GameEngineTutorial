@@ -89,7 +89,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PROFILING_ON;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\Qt\include;$(SolutionDir)..\Middleware\glew\include\GL;$(SolutionDir)..\Engine\Engine\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -152,12 +152,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ControllerComponent.cpp" />
+    <ClCompile Include="MyGame.cpp" />
+    <ClCompile Include="MyGame_MOC.cpp" />
     <ClCompile Include="MyGlWindow.cpp" />
     <ClCompile Include="MyglWindow_MOC.cpp" />
+    <ClCompile Include="MyKeyMapper.cpp" />
     <ClCompile Include="SandboxGame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControllerComponent.h" />
+    <ClInclude Include="MyGame.h" />
     <ClInclude Include="MyGlWindow.h" />
+    <ClInclude Include="MyKeyMapper.h" />
+    <ClInclude Include="MyMenuChoice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

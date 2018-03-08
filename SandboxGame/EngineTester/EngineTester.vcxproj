@@ -89,7 +89,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>noOVERNIGHT_TESTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PROFILING_ON;OVERNIGHT_TESTSoff;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\googletest-master\include\;$(SolutionDir)..\Engine\Engine\;$(SolutionDir)..\Middleware\Qt\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -150,6 +150,7 @@
     <ClCompile Include="ClockTests.cpp" />
     <ClCompile Include="Matrix2DTest.cpp" />
     <ClCompile Include="Matrix3DTest.cpp" />
+    <ClCompile Include="ProfilerTest.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="vector2DTest.cpp" />
     <ClCompile Include="vector3DTests.cpp" />
@@ -161,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelperFunction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="profile.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

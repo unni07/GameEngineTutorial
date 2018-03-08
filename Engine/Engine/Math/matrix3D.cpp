@@ -60,3 +60,11 @@ matrix3D Math::matrix3D::translate(float x , float y)
     0,1,y,
     0,0,1);
 }
+
+matrix3D Math::matrix3D::scale(float x, float y)
+{
+	return matrix3D(
+		x, 0, 0,
+		0, y, 0,
+		0, 0, 1);
+}

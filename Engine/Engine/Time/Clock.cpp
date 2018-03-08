@@ -27,17 +27,46 @@ bool Timing::Clock::shutdown()
 	return true;
 }
 
-float Timing::Clock::timeElapsedLastFrame() const
+void Timing::Clock::start()
 {
-	return deltaTime;
+	QueryPerformanceCounter(&lastStartTime);
 }
 
-void Timing::Clock::newFrame()
+void Timing::Clock::stop()
 {
 	LARGE_INTEGER thisTime;
 	QueryPerformanceCounter(&thisTime);
 	LARGE_INTEGER delta;
-	delta.QuadPart = thisTime.QuadPart - timeLastFrame.QuadPart;
+	delta.QuadPart = thisTime.QuadPart - lastStartTime.QuadPart;
 	deltaTime = ((float)delta.QuadPart) / timeFrequency.QuadPart;
-	timeLastFrame.QuadPart = thisTime.QuadPart;
+	deltaLastlap.QuadPart = thisTime.QuadPart;
 }
+
+void Timing::Clock::lap()
+{
+	stop();
+	start();
+	
+}
+
+//float Timing::Clock::timeElapsedLastFrame() const
+//{
+//	return deltaTime;
+//}
+
+
+
+float Timing::Clock::lastLapTime() const
+{
+	return deltaTime;
+}
+
+//void Timing::Clock::newFrame()
+//{
+//	LARGE_INTEGER thisTime;
+//	QueryPerformanceCounter(&thisTime);
+//	LARGE_INTEGER delta;
+//	delta.QuadPart = thisTime.QuadPart - timeLastFrame.QuadPart;
+//	deltaTime = ((float)delta.QuadPart) / timeFrequency.QuadPart;
+//	timeLastFrame.QuadPart = thisTime.QuadPart;
+//}

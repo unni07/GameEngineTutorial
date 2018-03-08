@@ -7,6 +7,9 @@ namespace Timing {
 	{
 		LARGE_INTEGER timeLastFrame;
 		LARGE_INTEGER timeFrequency;
+		LARGE_INTEGER deltaLastlap;
+
+		LARGE_INTEGER lastStartTime;
 		float deltaTime;
 
 	public:
@@ -15,8 +18,12 @@ namespace Timing {
 
 		bool initialize();
 		bool shutdown();
-		float timeElapsedLastFrame() const;
-		void newFrame();
+		void start();
+		void stop();
+		void lap(); //newFrame();
+		//float timeElapsedLastFrame() const;
+		float lastLapTime() const; //timeElapsedLastLapTime
+		//void newFrame();
 
 	};
 }

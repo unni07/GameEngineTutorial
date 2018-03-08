@@ -91,10 +91,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;PROFILING_ON;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir); $(SolutionDir)..\Middleware\Qt\include;$(SolutionDir)..\Middleware\glew\include\GL;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glew32d.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Middleware\Qt\lib;$(SolutionDir)..\Middleware\glew\lib;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -145,18 +148,45 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\Components\BoundaryHandlerComponent.h" />
+    <ClInclude Include="Entities\Component.h" />
+    <ClInclude Include="Debug Tools\Profiling\Profile.h" />
+    <ClInclude Include="Entities\Entity.h" />
+    <ClInclude Include="Misc\Helpers.h" />
+    <ClInclude Include="Time\GameClock.h" />
+    <ClInclude Include="Input\IkeyMapper.h" />
+    <ClInclude Include="Input\KeyInput.h" />
     <ClInclude Include="Math\Constants.h" />
     <ClInclude Include="Math\matrix2D.h" />
     <ClInclude Include="Math\matrix3D.h" />
+    <ClInclude Include="Debug Tools\Profiling\profiler.h" />
+    <ClInclude Include="Math\matrix2DH.h" />
+    <ClInclude Include="Misc\TypeDefs.h" />
+    <ClInclude Include="Entities\Components\RendererComponent.h" />
+    <ClInclude Include="Entities\Components\PhysicsComponent.h" />
+    <ClInclude Include="Rendering\Renderer.h" />
+    <ClInclude Include="Rendering\Geometry.h" />
+    <ClInclude Include="Rendering\Renderable.h" />
     <ClInclude Include="Time\Clock.h" />
     <ClInclude Include="Math\vector2D.h" />
     <ClInclude Include="Math\vector3D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Entities\Components\BoundaryHandlerComponent.cpp" />
+    <ClCompile Include="Entities\Component.cpp" />
+    <ClCompile Include="Debug Tools\Profiling\Profile.cpp" />
+    <ClCompile Include="Entities\Entity.cpp" />
+    <ClCompile Include="Time\GameClock.cpp" />
+    <ClCompile Include="Input\KeyInput.cpp" />
     <ClCompile Include="Math\matrix2D.cpp" />
     <ClCompile Include="Math\Source.cpp" />
     <ClCompile Include="Math\vector2D.cpp" />
     <ClCompile Include="Math\matrix3D.cpp" />
+    <ClCompile Include="Debug Tools\Profiling\profiler.cpp" />
+    <ClCompile Include="Math\matrix2DH.cpp" />
+    <ClCompile Include="Entities\Components\RendererComponent.cpp" />
+    <ClCompile Include="Entities\Components\PhysicsComponent.cpp" />
+    <ClCompile Include="Rendering\Renderer.cpp" />
     <ClCompile Include="Time\Clock.cpp" />
     <ClCompile Include="Math\vector3D.cpp" />
   </ItemGroup>

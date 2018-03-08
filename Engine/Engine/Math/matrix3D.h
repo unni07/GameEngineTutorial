@@ -21,7 +21,8 @@ namespace Math
 		vector3D operator*(const vector3D& rhs);
 		matrix3D operator*(const matrix3D& rhs);
 		static matrix3D rotateZ(float angleInRadians);
-			static matrix3D translate(float x, float y);
+		static matrix3D translate(float x, float y);
+		static matrix3D scale(float x, float y);
 	};
 
 
