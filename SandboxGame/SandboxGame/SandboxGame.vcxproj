@@ -90,7 +90,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\Qt\include;$(SolutionDir)..\Middleware\glew\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\Qt\include;$(SolutionDir)..\Middleware\glew\include\GL;$(SolutionDir)..\Engine\Engine\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> parent of 8a53185... Finally completed the tutorial
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

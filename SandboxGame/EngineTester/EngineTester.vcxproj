@@ -88,8 +88,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+<<<<<<< HEAD
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\googletest-master\include\;$(SolutionDir)..\Engine\Engine\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <PreprocessorDefinitions>noOVERNIGHT_TESTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Middleware\googletest-master\include\;$(SolutionDir)..\Engine\Engine\;$(SolutionDir)..\Middleware\Qt\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> parent of 8a53185... Finally completed the tutorial
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,11 +146,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Middleware\googletest-master\include\src\gtest-all.cc" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="ClockTests.cpp" />
+    <ClCompile Include="Matrix2DTest.cpp" />
+    <ClCompile Include="Matrix3DTest.cpp" />
+>>>>>>> parent of 8a53185... Finally completed the tutorial
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="vector2DTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClInclude Include="vector2DTest.h" />
+=======
+    <ProjectReference Include="..\..\Engine\Engine\Engine.vcxproj">
+      <Project>{2b876b99-18b4-42f7-84b9-0716a6c9de59}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HelperFunction.h" />
+>>>>>>> parent of 8a53185... Finally completed the tutorial
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

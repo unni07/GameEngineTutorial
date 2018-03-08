@@ -143,10 +143,26 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="Math\Constants.h" />
+    <ClInclude Include="Math\matrix2D.h" />
+    <ClInclude Include="Math\matrix3D.h" />
+    <ClInclude Include="Time\Clock.h" />
+>>>>>>> parent of 8a53185... Finally completed the tutorial
     <ClInclude Include="Math\vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="Math\vector2D.inl" />
+=======
+    <ClCompile Include="Math\matrix2D.cpp" />
+    <ClCompile Include="Math\Source.cpp" />
+    <ClCompile Include="Math\vector2D.cpp" />
+    <ClCompile Include="Math\matrix3D.cpp" />
+    <ClCompile Include="Time\Clock.cpp" />
+    <ClCompile Include="Math\vector3D.cpp" />
+>>>>>>> parent of 8a53185... Finally completed the tutorial
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

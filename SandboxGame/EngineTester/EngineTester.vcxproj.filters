@@ -24,6 +24,21 @@
     <ClCompile Include="vector2DTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="ClockTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix2DTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vector3DTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3DTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+>>>>>>> parent of 8a53185... Finally completed the tutorial
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vector2DTest.h">
